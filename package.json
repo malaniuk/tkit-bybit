@@ -1,13 +1,13 @@
 {
   "name": "@malaniuk/tkit-bybit",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "repository": {
     "type": "git",
     "url": "https://github.com/malaniuk/bybit-garbage-collector.git"
   },
   "scripts": {
     "build": "tsc",
-    "publish": "npm publish --access public"
+    "push": "npm publish --access public"
   },
   "devDependencies": {
     "@types/lodash": "^4.17.6",
