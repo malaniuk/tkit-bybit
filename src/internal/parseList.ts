@@ -1,4 +1,5 @@
 import { APIResponseV3WithTime } from 'bybit-api';
+import * as lo from 'lodash';
 
 type TList<T> = APIResponseV3WithTime<{ list: T[] }>;
 
@@ -9,7 +10,7 @@ export const parseList = async <T>(key: string, query: Promise<TList<T>>) => {
     throw { key, obj: resp };
   }
 
-  if (resp.result.list && resp.result.list.length > 0) {
+  if (lo.isEmpty(resp.result.list)) {
     throw { key, obj: resp };
   }
 
