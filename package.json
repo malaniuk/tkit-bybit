@@ -1,6 +1,6 @@
 {
   "name": "@malaniuk/tkit-bybit",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "repository": {
     "type": "git",
     "url": "https://github.com/malaniuk/bybit-garbage-collector.git"
