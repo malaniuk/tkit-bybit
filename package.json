@@ -1,6 +1,10 @@
 {
   "name": "@malaniuk/tkit-bybit",
   "version": "1.0.0",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/malaniuk/bybit-garbage-collector.git"
+  },
   "scripts": {
     "build": "tsc",
     "publish": "npm publish --access public"
