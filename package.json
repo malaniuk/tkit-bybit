@@ -1,6 +1,6 @@
 {
   "name": "@malaniuk/tkit-bybit",
-  "version": "1.0.8",
+  "version": "1.1.0",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/malaniuk/tkit-bybit.git"
@@ -35,6 +35,7 @@
   "description": "",
   "dependencies": {
     "@malaniuk/tkit-date": "^1.0.2",
+    "@malaniuk/tkit-logger": "^1.0.0",
     "bybit-api": "^3.10.13",
     "decimal.js": "^10.4.3",
     "lodash": "^4.17.21"
