@@ -10,10 +10,10 @@ export const wsUpdates = (cb: (data: any) => void) =>
       }
 
       const price = new Decimal(data.lastPrice);
-      cb({ topic, data: { price } });
+      const symbol = data.symbol;
 
-      return;
+      return cb({ topic, data: { price, symbol } });
     }
 
-    cb({ topic, data });
+    return cb({ topic, data });
   });
