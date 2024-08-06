@@ -1,6 +1,6 @@
 export * from './buyMarket';
 export * from './checkOrder';
-export * from './getSpotPrecisions';
+export * from './getPrecisions';
 export * from './getSpotPrices';
 export * from './getUsdtBalance';
 export * from './orderEdit';
