@@ -1,7 +1,10 @@
+import { OrderSideV5 } from 'bybit-api';
+
 import { category, Num, parseOrderId, rest } from './internal';
 
-export const orderOpenBuyConditional = async (
+export const futuresOpenConditional = async (
   symbol: string,
+  side: string,
   price: Num,
   quantity: Num,
 ) => {
@@ -11,10 +14,10 @@ export const orderOpenBuyConditional = async (
     triggerPrice: price.toString(),
     qty: quantity.toString(),
     orderType: 'Market',
-    orderFilter: 'StopOrder',
-    marketUnit: 'quoteCoin',
-    side: 'Buy',
+    side: side as OrderSideV5,
+    positionIdx: 1,
+    triggerDirection: 1,
   });
 
-  return parseOrderId('open-conditional-bybit', query);
+  return parseOrderId('futures-open-buy-conditional', query);
 };
