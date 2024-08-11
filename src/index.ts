@@ -1,6 +1,6 @@
 export * from './buyMarket';
 export * from './checkOrder';
-export * from './fOpenConditional';
+export * from './futuresOpen';
 export * from './getPrecisions';
 export * from './getPrices';
 export * from './getUsdtBalance';

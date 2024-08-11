@@ -2,7 +2,7 @@ import { OrderSideV5 } from 'bybit-api';
 
 import { category, Num, parseOrderId, rest } from './internal';
 
-const fOpenConditional = (symbol: string, side: string, price: Num, qty: Num) =>
+const futuresOpen = (symbol: string, side: string, price: Num, qty: Num) =>
   parseOrderId(
     'future-open-buy-conditional',
     rest.submitOrder({
@@ -12,9 +12,9 @@ const fOpenConditional = (symbol: string, side: string, price: Num, qty: Num) =>
       qty: qty.toString(),
       orderType: 'Market',
       side: side as OrderSideV5,
-      positionIdx: 1,
-      triggerDirection: 1,
+      positionIdx: side === 'Buy' ? 1 : 2,
+      triggerDirection: side === 'Buy' ? 1 : 2,
     }),
   );
 
-export { fOpenConditional };
+export { futuresOpen };
