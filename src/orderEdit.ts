@@ -1,12 +1,12 @@
 import { category, Num, parseOrderId, rest } from './internal';
 
-export const orderEdit = async (
-  orderId: string,
-  symbol: string,
-  newOrderPrice: Num,
-) => {
-  const triggerPrice = newOrderPrice.toString();
-  const query = rest.amendOrder({ category, symbol, orderId, triggerPrice });
-
-  return parseOrderId('open-edit-bybit', query);
-};
+export const orderEdit = (id: string, symbol: string, price: Num) =>
+  parseOrderId(
+    'open-edit-bybit',
+    rest.amendOrder({
+      category,
+      symbol,
+      orderId: id,
+      triggerPrice: price.toString(),
+    }),
+  );

@@ -1,11 +1,13 @@
 import { category, Num, parseOrderId, rest } from './internal';
 
-const orderType = 'Market';
-const side = 'Buy';
-
-export const orderOpenBuyMarket = async (symbol: string, quantity: Num) => {
-  const qty = quantity.toString();
-  const query = rest.submitOrder({ category, orderType, qty, side, symbol });
-
-  return parseOrderId('buy-market-bybit', query);
-};
+export const orderOpenBuyMarket = (symbol: string, qty: Num) =>
+  parseOrderId(
+    'buy-market-bybit',
+    rest.submitOrder({
+      category,
+      orderType: 'Market',
+      qty: qty.toString(),
+      side: 'Buy',
+      symbol,
+    }),
+  );
