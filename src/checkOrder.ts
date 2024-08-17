@@ -4,8 +4,8 @@ export const orderDoneStatus = ['PartiallyFilledCanceled', 'Filled'];
 export const orderErrorStatus = ['Deactivated', 'Rejected', 'Cancelled'];
 export const orderCloseStatus = [...orderDoneStatus, ...orderErrorStatus];
 
-export const checkOrder = async (id: string) => {
-  const order = await getOrder(id);
+export const checkOrder = async (id: string, symbol?: string) => {
+  const order = await getOrder(id, symbol);
 
   if (order && orderErrorStatus.includes(order.orderStatus))
     throw { key: 'check-order-error', obj: { order } };
