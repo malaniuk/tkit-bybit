@@ -2,6 +2,7 @@ export * from './buyMarket';
 export * from './checkOrder';
 export * from './futuresClose';
 export * from './futuresOpen';
+export * from './getActiveOrders';
 export * from './getPrecisions';
 export * from './getPrices';
 export * from './getUsdtBalance';
