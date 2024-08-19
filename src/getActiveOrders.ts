@@ -1,10 +1,10 @@
-import { category, parseList, rest } from './internal';
+import { category, rest } from './internal';
 
-export const getActiveOrders = async (settleCoin?: string) =>
-  parseList(
-    'get-order-bybit',
-    rest.getActiveOrders({
-      category,
-      settleCoin,
-    }),
-  );
+export const getActiveOrders = async (settleCoin?: string) => {
+  const resp = await rest.getActiveOrders({ category, settleCoin });
+  if (resp.retCode !== 0) {
+    throw { key: 'get-order-bybit', obj: resp };
+  }
+
+  return resp.result.list;
+};
