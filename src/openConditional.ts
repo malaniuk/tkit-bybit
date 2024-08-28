@@ -11,8 +11,6 @@ const openConditional = (symbol: string, side: string, price: Num, qty: Num) =>
       triggerPrice: price.toString(),
       qty: qty.toString(),
       orderType: 'Market',
-      orderFilter: 'StopOrder',
-      marketUnit: 'quoteCoin',
       side: side as OrderSideV5,
     }),
   );
