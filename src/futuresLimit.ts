@@ -2,24 +2,19 @@ import { OrderSideV5 } from 'bybit-api';
 
 import { category, Num, parseOrderId, rest } from './internal';
 
-export const futuresClose = (
-  symbol: string,
-  side: string,
-  price: Num,
-  qty?: Num,
-) =>
+const futuresLimit = (symbol: string, side: string, price: Num, qty: Num) =>
   parseOrderId(
-    'future-close-buy-conditional',
+    'future-open-buy-conditional',
     rest.submitOrder({
       category,
       symbol,
       triggerPrice: price.toString(),
-      orderType: 'Market',
+      qty: qty.toString(),
+      orderType: 'Limit',
       side: side as OrderSideV5,
-      qty: qty ? qty.toString() : '0',
-      positionIdx: side === 'Buy' ? 2 : 1,
+      positionIdx: side === 'Buy' ? 1 : 2,
       triggerDirection: side === 'Buy' ? 1 : 2,
-      reduceOnly: true,
-      closeOnTrigger: true,
     }),
   );
+
+export { futuresLimit };
