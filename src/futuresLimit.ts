@@ -4,7 +4,7 @@ import { category, Num, parseOrderId, rest } from './internal';
 
 const futuresLimit = (symbol: string, side: string, price: Num, qty: Num) =>
   parseOrderId(
-    'future-open-buy-conditional',
+    'future-open-buy-limit',
     rest.submitOrder({
       category,
       symbol,
