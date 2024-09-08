@@ -8,7 +8,7 @@ const futuresLimit = (symbol: string, side: string, price: Num, qty: Num) =>
     rest.submitOrder({
       category,
       symbol,
-      triggerPrice: price.toString(),
+      price: price.toString(),
       qty: qty.toString(),
       orderType: 'Limit',
       side: side as OrderSideV5,
