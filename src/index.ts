@@ -1,4 +1,5 @@
 export * from './buyMarket';
+export * from './cancel';
 export * from './checkOrder';
 export * from './futuresClose';
 export * from './futuresLimit';
