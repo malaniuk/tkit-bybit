@@ -5,6 +5,7 @@ export * from './futuresClose';
 export * from './futuresLimit';
 export * from './futuresOpen';
 export * from './getActiveOrders';
+export * from './getLastOrders';
 export * from './getPrecisions';
 export * from './getPrices';
 export * from './getUsdtBalance';
