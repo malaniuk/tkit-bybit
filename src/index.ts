@@ -14,6 +14,7 @@ export * from './openConditional';
 export * from './orderEdit';
 export * from './orderOpenBuyMarket';
 export * from './type';
+export * from './validateOrder';
 export * from './waitOrderComplete';
 export * from './wsSubscribeOrders';
 export * from './wsSubscribePrices';

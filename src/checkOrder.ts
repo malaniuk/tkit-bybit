@@ -1,16 +1,5 @@
 import { getOrder } from './internal';
+import { validateOrder } from './validateOrder';
 
-export const orderDoneStatus = ['PartiallyFilledCanceled', 'Filled'];
-export const orderErrorStatus = ['Deactivated', 'Rejected', 'Cancelled'];
-export const orderCloseStatus = [...orderDoneStatus, ...orderErrorStatus];
-
-export const checkOrder = async (id: string, symbol?: string) => {
-  const order = await getOrder(id, symbol);
-
-  if (order && orderErrorStatus.includes(order.orderStatus))
-    throw { key: 'check-order-error', obj: { order } };
-
-  if (order && orderDoneStatus.includes(order.orderStatus)) {
-    return order;
-  }
-};
+export const checkOrder = async (id: string, symbol?: string) =>
+  validateOrder(await getOrder(id, symbol));
