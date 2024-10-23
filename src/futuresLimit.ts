@@ -1,5 +1,5 @@
 import { OrderSideV5 } from 'bybit-api';
-import { v4 as uuidv4 } from 'uuid';
+import { randomUUID } from 'crypto';
 
 import { category, Num, parseList, parseOrderId, rest } from './internal';
 import { orderOpenStatus } from './validateOrder';
@@ -10,7 +10,7 @@ const futuresLimit = async (
   price: Num,
   qty: Num,
 ) => {
-  const orderLinkId = uuidv4();
+  const orderLinkId = randomUUID();
 
   try {
     return parseOrderId(
