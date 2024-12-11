@@ -15,8 +15,14 @@ const customLogger = {
 
 const key = process.env.BB_API_KEY;
 const secret = process.env.BB_API_SECRET;
+const testnet = process.env.BB_TESTNET === 'true';
 
-const wsOpts: WSClientConfigurableOptions = { key, secret, market: 'v5' };
+const wsOpts: WSClientConfigurableOptions = {
+  key,
+  secret,
+  testnet,
+  market: 'v5',
+};
 const socket = new WebsocketClient(wsOpts, customLogger);
 
 socket.on('open', () => log.info('socket-connected'));
