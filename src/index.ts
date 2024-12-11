@@ -8,6 +8,7 @@ export * from './getActiveOrders';
 export * from './getFundings';
 export * from './getLastOrders';
 export * from './getPrecisions';
+export * from './getPrice';
 export * from './getPrices';
 export * from './getUsdtBalance';
 export * from './internal/rest';
