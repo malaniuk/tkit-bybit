@@ -11,6 +11,7 @@ export * from './getPrecisions';
 export * from './getPrice';
 export * from './getPrices';
 export * from './getUsdtBalance';
+export * from './internal';
 export * from './internal/rest';
 export * from './openConditional';
 export * from './orderEdit';
